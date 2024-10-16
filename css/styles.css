@@ -1,0 +1,238 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Italianno&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color1:#799A67;
+    --color2: #fff;
+    --fuente1:"Inknut Antiqua", serif;
+    --fuente2:"Italianno", cursive;
+    --fuente3:"DM Sans", sans-serif;
+}
+
+table.calendar td {
+    text-align: left;       /* Alinea el texto (números) a la izquierda */
+    vertical-align: top;  
+}
+
+body {
+    font-family: var(--fuente1);
+    background-color: var(--color2);
+}
+
+.calendar-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.reserva-calend {
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 4px;
+    color: white;
+}
+
+.reserva-curso {
+    background-color: var(--color1); /* Verde para reservas en curso */
+}
+
+.reserva-cancelada {
+    background-color: rgb(212, 71, 71); /* Rojo para reservas canceladas */
+}
+
+.reserva-pendiente {
+    background-color: rgb(105, 105, 105); /* Gris para reservas pendientes */
+}
+
+.reserva-finalizada {
+    background-color: yellow; /* Amarillo para reservas finalizadas */
+    color: black; /* Cambia el color del texto para mejor visibilidad en amarillo */
+}
+
+
+header {
+    background-color: var(--color1);
+    display: flex;
+    padding: 2vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: var(--fuente2);
+    font-size: 10vw;
+    font-weight: lighter;
+}
+
+header img {
+    width: 13vw;
+    height: 5vw;
+}
+
+header button {
+    width: 6vw;
+    height: 6vw;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+header button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;}
+
+.calendar-controls select#month-select, .calendar-controls select#year-select {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 1rem;
+    border: solid rgb(48, 46, 46) 2px;
+}
+
+table.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.calendar th, table.calendar td {
+    width: calc(100% / 7); /* Asegura que cada celda ocupe el 1/7 del ancho */
+    padding: 10px; /* Ajusta el padding */
+    text-align: center;
+    border: 2px solid #e0e0e0;
+}
+
+
+table.calendar td {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+table.calendar td:hover {
+    background-color: #e0e0e0;
+}
+
+div.reserva-calend{
+font-family: var(--fuente3);
+font-size: 1vw;
+margin: 1vw;}
+
+
+
+@media (max-width: 480px) {
+    header {
+        width: 100%;
+    }
+    header h1 {
+        font-size: 9vw;
+    }
+
+    header img {
+        width: 20vw;
+        height: 8vw;
+    }
+
+    header button {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .calendar-controls select {
+        font-size: 0.8rem;
+    }
+
+    .calendar-container {
+        width: 98%;
+    }
+
+    table.calendar th, table.calendar td {
+        padding: 1vw; /* Reduce el padding para hacer las celdas más pequeñas */
+        font-size: 0.5rem; /* Reduce el tamaño de la fuente */    }
+
+    table.calendar th {
+        background-color: var(--color1); /* Mejora la visibilidad de los encabezados */
+        color: white;
+    }
+
+    table.calendar td {
+        height: 20vw; /* Ajusta la altura de las celdas */
+    }
+    
+    table.calendar td:hover {
+        background-color: var(--color1); /* Cambia el color de hover para mejor visibilidad */
+        color: white;
+    }
+    .calendar-controls select {
+        font-size: 1.2rem;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    header h1 {
+        font-size: 7vw;
+    }
+
+    header img {
+        width: 15vw;
+        height: 6vw;
+    }
+
+    header button {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .calendar-controls select {
+        font-size: 1.5rem;
+    }
+    table.calendar td, table.calendar th{
+        padding: 0px; /* Ajusta el padding */
+        height: 20vw;
+        border: 3px solid #e0e0e0;
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 769px) {
+    header h1 {
+        font-size: 5vw;
+    }
+
+    header img {
+        width: 10vw;
+        height: 4vw;
+    }
+
+    header button {
+        width: 5vw;
+        height: 5vw;
+    }
+    .calendar-controls select {
+        font-size: 1.6rem;
+    }
+
+    table.calendar td, table.calendar th{
+        padding: 0.5vw;
+        border: 3px solid #e0e0e0;
+        font-size: 1.2rem;
+    }
+    table.calendar td{
+        height: 18vw;
+    }
+}
